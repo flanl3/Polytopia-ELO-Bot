@@ -789,6 +789,7 @@ class Game(BaseModel):
     game_chan = BitField(default=None, null=True)
     size = ArrayField(SmallIntegerField, default=[0])
     is_mobile = BooleanField(default=True)
+    is_rec = BooleanField(default=True)
 
     def __setattr__(self, name, value):
         if name == 'name':
