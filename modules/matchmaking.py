@@ -126,6 +126,9 @@ class matchmaking(commands.Cog):
 
         if (settings.guild_setting(ctx.guild.id, 'steam_game_channel') and ctx.channel.id == settings.guild_setting(ctx.guild.id, 'steam_game_channel')) or ctx.invoked_with == 'opensteam':
             is_mobile = False
+            
+        if settings.guild_setting(ctx.guild.id, 'rec_server') and ctx.invoked_with == 'recgame':
+            is_rec = True
 
         args = args.replace("'", "\\'")  # Escape single quotation marks for shlex.split() parsing
         if args.count('"') % 2 != 0:
